@@ -9,11 +9,15 @@
   <body class="bg-gray-100">
     <div class="container mx-auto px-4">
       <header class="text-center my-12">
-        <h1 class="text-4xl font-bold text-blue-800">Book Details</h1>
-        <p class="text-lg mt-3">Find all the information about your book.</p>
+        <h1 class="text-4xl font-bold text-blue-800">Edit Book</h1>
+        <p class="text-lg mt-3">Edit all the information about your book.</p>
       </header>
-      <main id="books" class="flex justify-center items-center">
-        <!-- The book details will be dynamically inserted here by the JavaScript -->
+      <main id="x" class="flex justify-center items-center">
+        <form id="form"></form>
+        <input id="title" name="title" />
+        <input id="author" name="author" />
+        <input id="year" name="year" />
+        <textarea name="desc" id="desc" cols="30" rows="10"></textarea>
       </main>
     </div>
     <script src="editBook.js"></script>
