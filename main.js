@@ -38,7 +38,7 @@ async function buildApp() {
     bookBtn.className =
       "mt-4 py-2 px-4 bg-blue-500 text-white font-bold rounded hover:bg-blue-700 transition-colors";
     bookBtn.onclick = () =>
-      (window.location.href = `/book.html?id=${book._id}`);
+      (window.location.href = `./book.html?id=${book._id}`);
 
     bookContainer.append(bookImage, bookTitle, bookAuthor, bookDesc, bookBtn);
     booksContainer.appendChild(bookContainer);

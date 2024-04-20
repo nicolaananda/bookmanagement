@@ -51,7 +51,7 @@ async function buildApp() {
   editButton.style.justifyContent = "center"; // Dan ini akan memusatkan konten secara horizontal
 
   editButton.addEventListener("click", () => {
-    window.location.href = `/editbook.html?id=${book._id}`;
+    window.location.href = `./editbook.html?id=${book._id}`;
   });
 
   bookDetailContainer.appendChild(coverElement);
