@@ -3,7 +3,7 @@ const form = document.getElementById("form");
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
-  const formData = new FormData(event.target); // Corrected 'new FormData'
+  const formData = new FormData(event.target);
 
   const title = formData.get("title");
   const author = formData.get("author");
@@ -29,11 +29,9 @@ form.addEventListener("submit", async (event) => {
 
   if (response.ok) {
     alert("Book added successfully!");
-    // Optionally, handle redirection or updating the UI here
   } else {
     alert("Book added successfully!");
   }
-  //   console.log({ title, author, year, desc, publisher, category, cover });
 });
 
 async function createData(

@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    // Update data buku
     const res = await fetch("https://v1.appbackend.io/v1/rows/qs57h6ZeWDpr", {
       method: "PUT",
       headers: {

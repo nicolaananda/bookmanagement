@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const coverElement = document.createElement("img");
     coverElement.src = book.cover;
     coverElement.alt = `Cover of ${book.title}`;
-    coverElement.className = "my-4 w-full h-[300px] object-cover"; // Mengatur lebar dan tinggi tetap 300px
+    coverElement.className = "my-4 w-full h-[300px] object-cover";
 
     const authorElement = document.createElement("p");
     authorElement.textContent = `Author: ${book.author}`;
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const descElement = document.createElement("p");
     descElement.textContent = book.desc;
-    descElement.className = "text-md my-4 text-justify"; // Mengatur teks menjadi justified
+    descElement.className = "text-md my-4 text-justify";
 
     const editButton = document.createElement("button");
     editButton.textContent = "Edit";
@@ -97,10 +97,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Listener for message from iframe
   window.addEventListener("message", (event) => {
     if (event.data === "closeModal") {
-      closeIframeModal(); // Ensure this matches your function to close the modal
+      closeIframeModal();
     }
   });
 
