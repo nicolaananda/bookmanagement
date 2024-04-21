@@ -6,6 +6,46 @@ async function getAllBooks() {
   const data = await res.json();
   return data;
 }
+function openAddBookModal() {
+  const modalBackdrop = document.createElement("div");
+  modalBackdrop.className =
+    "fixed inset-0 bg-gray-600 bg-opacity-50 flex justify-center items-center z-10";
+  modalBackdrop.onclick = function (event) {
+    if (event.target === modalBackdrop) {
+      modalBackdrop.remove();
+    }
+  };
+  const addBookButton = document.getElementById("addBookBtn");
+  if (addBookButton) {
+    addBookButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      openAddBookModal();
+    });
+  }
+
+  const modalContent = document.createElement("div");
+  modalContent.className =
+    "bg-white p-5 rounded-lg shadow-lg w-[700px] max-w-4xl mx-auto";
+
+  const iframe = document.createElement("iframe");
+  iframe.src = "./addPage.html";
+  iframe.frameBorder = "0";
+  iframe.className = "w-full h-[600px]";
+  modalContent.appendChild(iframe);
+
+  modalBackdrop.appendChild(modalContent);
+  document.body.appendChild(modalBackdrop);
+}
+async function deleteData(id) {
+  await fetch(API_ENDPOINT, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify([id]),
+  });
+  location.reload();
+}
 
 async function buildApp() {
   const { data: books } = await getAllBooks();
@@ -42,7 +82,23 @@ async function buildApp() {
     bookBtn.onclick = () =>
       (window.location.href = `./book.html?id=${book._id}`);
 
-    bookContainer.append(bookImage, bookTitle, bookAuthor, bookDesc, bookBtn);
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "Delete";
+    deleteBtn.className =
+      "mt-4 py-2 px-4 bg-red-500 text-white font-bold rounded hover:bg-red-700 transition-colors";
+
+    deleteBtn.addEventListener("click", async () => {
+      await deleteData(book._id);
+    });
+
+    bookContainer.append(
+      bookImage,
+      bookTitle,
+      bookAuthor,
+      bookDesc,
+      bookBtn,
+      deleteBtn
+    );
     booksContainer.appendChild(bookContainer);
   });
 }

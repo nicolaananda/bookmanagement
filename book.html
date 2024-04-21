@@ -8,24 +8,43 @@
   </head>
 
   <body class="bg-gray-100">
-    <div class="container mx-auto px-4">
-      <div class="my-4">
-        <button
-          onclick="history.back()"
-          class="text-white bg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 rounded"
+    <!-- Navbar -->
+    <nav class="sticky top-0 bg-white shadow-md z-50 w-full">
+      <div class="max-w-5xl mx-auto px-4 py-2 flex justify-between">
+        <div class="flex space-x-4">
+          <a href="/" class="text-blue-500 hover:text-blue-700 font-semibold"
+            >Home</a
+          >
+          <a
+            href="/addPage.html"
+            class="text-blue-500 hover:text-blue-700 font-semibold"
+            >Add Book</a
+          >
+        </div>
+        <a href="#" class="text-blue-500 hover:text-blue-700 font-semibold"
+          >Logout</a
         >
-          Back
-        </button>
       </div>
+    </nav>
+
+    <!-- Header and Book Detail Section -->
+    <div class="max-w-5xl mx-auto px-4">
       <header class="text-center my-12">
         <h1 class="text-4xl font-bold text-blue-800">Book Details</h1>
         <p class="text-lg mt-3">Find all the information about your book.</p>
       </header>
+
+      <!-- Book Detail Container -->
       <main id="books" class="flex justify-center items-center">
-        <!-- Book details will be inserted here -->
+        <!-- Book details will be inserted here by book.js -->
       </main>
     </div>
-    <div class="my-6"></div>
+
+    <!-- Optional Footer -->
+    <footer class="text-center py-4 bg-gray-200 mt-6">
+      <p>&copy; 2024 Book Management System</p>
+    </footer>
+
     <script src="book.js"></script>
   </body>
 </html>

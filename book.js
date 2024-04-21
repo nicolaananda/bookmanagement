@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const bookDetailContainer = document.createElement("div");
     bookDetailContainer.className =
-      "flex flex-col items-center bg-white shadow-lg rounded-lg p-6 w-full md:w-2/3 lg:w-1/2";
+      "flex flex-col items-center bg-white shadow-lg rounded-lg p-6 w-auto md:max-w-2xl lg:max-w-4xl mx-auto";
 
     const titleElement = document.createElement("h2");
     titleElement.textContent = book.title;
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "fixed inset-0 bg-gray-600 bg-opacity-50 flex justify-center items-center z-10";
     modalBackdrop.onclick = (event) => {
       if (event.target === modalBackdrop) {
-        closeIframeModal(); // Changed to call closeIframeModal
+        closeIframeModal();
       }
     };
 
