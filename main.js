@@ -19,7 +19,7 @@ async function buildApp() {
     const bookImage = document.createElement("img");
     bookImage.src = book.cover;
     bookImage.alt = "Cover image of " + book.title;
-    bookImage.className = "w-full h-64 object-cover rounded";
+    bookImage.className = "w-full h-64 object-cover rounded mx-auto"; // Added mx-auto for horizontal centering
 
     const bookTitle = document.createElement("h2");
     bookTitle.textContent = book.title;
@@ -30,7 +30,9 @@ async function buildApp() {
     bookAuthor.className = "text-gray-600 italic";
 
     const bookDesc = document.createElement("p");
-    bookDesc.textContent = book.desc;
+    // Slice the description if it's longer than 300 characters
+    bookDesc.textContent =
+      book.desc.slice(0, 100) + (book.desc.length > 100 ? "..." : "");
     bookDesc.className = "text-gray-700 mt-2";
 
     const bookBtn = document.createElement("button");

@@ -6,16 +6,22 @@
     <title>Book Details</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
+
   <body class="bg-gray-100">
+    
     <div class="container mx-auto px-4">
+      <div class="my-4">
+            <button onclick="history.back()" class="text-white bg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 rounded">
+                Back
+            </button>
+        </div>
       <header class="text-center my-12">
         <h1 class="text-4xl font-bold text-blue-800">Book Details</h1>
         <p class="text-lg mt-3">Find all the information about your book.</p>
       </header>
       <main id="books" class="flex justify-center items-center">
-        <!-- The book details will be dynamically inserted here by the JavaScript -->
-      </main>
-    </div>
+        <!-- Book details will be inserted here -->
+       
     <script src="book.js"></script>
   </body>
 </html>
