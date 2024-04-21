@@ -43,8 +43,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     if (res.ok) {
       alert("Book updated successfully!");
-      // Mengirim pesan ke parent untuk menutup modal
-      window.parent.postMessage("closeModal", "*"); // Gunakan origin yang lebih spesifik daripada '*' jika Anda tahu origin tepatnya
+      window.parent.postMessage("closeModal", "*");
     } else {
       const errorData = await res.json();
       alert(`Failed to update book: ${errorData.message}`);

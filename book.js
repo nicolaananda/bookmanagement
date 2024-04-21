@@ -7,17 +7,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const API_ENDPOINT = `https://v1.appbackend.io/v1/rows/qs57h6ZeWDpr/${id}`;
 
   async function getBook() {
-    try {
-      const res = await fetch(API_ENDPOINT);
-      if (!res.ok) {
-        throw new Error(`HTTP error, status = ${res.status}`);
-      }
-      const book = await res.json();
-      return book;
-    } catch (error) {
-      console.error("Error fetching book details: ", error);
-      return null;
-    }
+    const res = await fetch(API_ENDPOINT);
+
+    const book = await res.json();
+    return book;
   }
 
   async function buildApp() {
